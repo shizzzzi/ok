@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1d1f27;
+    color: #fff;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  header {
+    background-color: #26282f;
+    padding: 1em 0;
+    margin-bottom: 2em;
+  }
+  
+  h1 {
+    color: #ff4545;
+    font-size: 2.5em;
+  }
+  
+  nav ul {
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 1em;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .intro {
+    padding: 2em;
+    background-color: #2b2d35;
+    border-radius: 10px;
+  }
+  
+  .intro h2 {
+    font-size: 2em;
+    color: #00ff99;
+  }
+  
+  .intro p {
+    font-size: 1.2em;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 0.7em 1.5em;
+    background-color: #006aff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1em;
+  }
+  
+  .events ul {
+    text-align: left;
+    list-style-type: none;
+    margin: 2em auto;
+    padding: 1em;
+    width: 60%;
+    background-color: #2b2d35;
+    border-radius: 10px;
+  }
+  
+  .events ul li {
+    margin: 0.5em 0;
+  }
+  
+  .gallery {
+    padding: 2em;
+  }
+  
+  .gallery .images {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .gallery .images img {
+    margin: 1em;
+    border-radius: 10px;
+  }
+  
+  footer {
+    background-color: #26282f;
+    padding: 1em 0;
+    margin-top: 2em;
+  }
+  
