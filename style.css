@@ -1,37 +1,55 @@
-*{
+* {
   margin: 0;
-  padding: 0;  
+  padding: 0;
 }
-html{
-  font-family: Poppins;
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #f0f0f0;
 }
-body{
+
+body {
   min-height: 100vh;
   background: #0b0d15;
   color: #a2a5b3;
   align-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
-h1{
+
+h1 {
   color: white;
 }
-.card{
+
+.card {
   margin: 0 auto;
   padding: 2em;
   width: 300px;
+  height: 450px;
   background: #1c1f2b;
   text-align: center;
+  transition: box-shadow 0.5s, background-color 0.5s, border-radius 0.5s, transform 0.3s;
+  margin-top: 200px;
+  cursor: pointer;
   border-radius: 10px;
   position: relative;
+  transition: 1s;
+  box-shadow: 0px 0px 20px 0px black;
 }
 
-@property --angle{
+.card:hover {
+  border-radius: 20px;
+  background-color: #25293a;
+}
+
+@property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
 
-.card::after, .card::before{
+.card::after,
+.card::before {
   content: '';
   position: absolute;
   height: 100%;
@@ -45,15 +63,335 @@ h1{
   border-radius: 10px;
   animation: 3s spin linear infinite;
 }
-.card::before{
+
+.card::before {
   filter: blur(1.5rem);
   opacity: 0.5;
 }
-@keyframes spin{
-  from{
+
+@keyframes spin {
+  from {
     --angle: 0deg;
   }
-  to{
+  to {
     --angle: 360deg;
+  }
+}
+
+nav {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  background-color: white;
+  top: 1px;
+  box-shadow: 4px 1px 50px 5px silver;
+  display: flex;
+  align-items: center;
+}
+
+ion-icon {
+  margin-left: 100px;
+  color: black;
+  font-size: 30px;
+  animation-name: ion-icon;
+  animation-duration: 3.0s; /* Duration for the bounce */
+  animation-fill-mode: forwards; /* Keep the final state of animation */
+  animation-delay: 0s;
+  text-shadow: 1px 1px 7px rgb(106, 106, 106);
+  cursor: pointer;
+  transition: transform 0.3s; /* Add transition for icons */
+}
+
+
+ion-icon:hover {
+  transform: scale(1.2); /* Scale up on hover */
+}
+
+nav img {
+  width: 100px;
+  height: 70px;
+  margin-left: 100px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  color: black;
+  text-align: center;
+  align-items: center;
+  margin-left: 100px;
+}
+
+li {
+  margin-left: 100px;
+  cursor: pointer;
+  animation-name: nav_li;
+  animation-duration: 3.0s; /* Duration for the bounce */
+  animation-fill-mode: forwards; /* Keep the final state of animation */
+  animation-delay: 0s;
+  text-shadow: 1px 1px 7px rgb(106, 106, 106);
+}
+
+.card img {
+  width: 300px;
+  height: 300px;
+}
+
+.card:hover {
+  padding: 2.3%;
+}
+
+.part_one {
+  width: 100%;
+  height: 100%;
+  margin-top: 300px;
+  display: flex;
+}
+
+.part_one_left video {
+  border-radius: 50px;
+  margin-left: 80px;
+  margin-top: -50px;
+  border: 1px solid silver;
+  animation-name: videoBounce; /* Apply bounce animation */
+  animation-duration: 0.5s; /* Duration for the bounce */
+  animation-fill-mode: forwards; /* Keep the final state of animation */
+  animation-delay: 0.3s; /* Delay before animation starts */
+  box-shadow: 1px 1px 50px 1px rgb(106, 106, 106);
+}
+
+.part_one_right h1 {
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+.part_one_right p {
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
+@keyframes videoBounce {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(25px); /* Move up */
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+@keyframes nav_li{
+  0%{
+    transform: scale(1.04);
+  }
+  50%{
+    transform: scale(1.7);
+  }
+  100%{
+    transform: scale(1.04);
+  }
+}
+
+iframe {
+  width: 500px;
+  margin-top: 100px;
+  height: 500px;
+  margin-left: 500px;
+  border-radius: 20px;
+}
+.contact {
+  width: 100%;
+  max-width: 600px; /* Limits the width of the form */
+  margin: 50px auto; /* Centers the form */
+  padding: 20px;
+  background: #1c1f2b; /* Background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 0px 20px 0px black; /* Shadow effect */
+}
+
+.contact h2 {
+  color: white; /* Text color */
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Spacing below the heading */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Spacing between form groups */
+}
+
+label {
+  display: block; /* Makes labels occupy full width */
+  margin-bottom: 5px; /* Spacing below the label */
+  color: #a2a5b3; /* Label color */
+}
+
+input,
+textarea {
+  width: 100%; /* Full width */
+  padding: 10px; /* Internal spacing */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  background: #25293a; /* Background color */
+  color: white; /* Text color */
+  transition: background 0.3s; /* Transition effect */
+}
+
+input:focus,
+textarea:focus {
+  background: #2a2e3e; /* Change background on focus */
+  outline: none; /* Remove outline */
+}
+
+button {
+  width: 100%; /* Full width */
+  padding: 10px; /* Internal spacing */
+  background: #ff4545; /* Button color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* Text color */
+  cursor: pointer; /* Pointer cursor */
+  transition: background 0.3s; /* Transition effect */
+}
+#menu{
+  display: none;
+}
+button:hover {
+  background: #ff7878; /* Change color on hover */
+}
+/* Base Styles (for larger screens) */
+/* Existing styles here */
+
+@media (max-width: 1200px) {
+  /* Large tablets and small laptops */
+  .part_one {
+      flex-direction: column;
+      align-items: center;
+  }
+  .part_one_left video {
+      width: 80%;
+      margin: 20px 0;
+  }
+  .part_one_right {
+      text-align: center;
+      margin: 0 20px;
+  }
+  iframe {
+      width: 80%;
+      height: 400px;
+      margin: 20px auto;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Medium-sized tablets */
+  .nav ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .card {
+      width: 90%;
+      margin: 20px auto;
+  }
+  .contact {
+      width: 90%;
+      margin: 20px auto;
+  }
+  video{
+    display: none;
+  }
+  ul{
+    display: none;
+  }
+  #menu{
+    display: block;
+    color: black;
+    ;
+  }
+  ion-icon{
+    display: none;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  /* Smaller tablets and landscape phones */
+  nav img {
+      margin-left: 20px;
+  }
+  ul {
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+  }
+  .card {
+      width: 100%;
+      margin: 10px 0;
+  }
+  ion-icon{
+    display: none;
+  }
+  .part_one {
+      flex-direction: column;
+      margin-top: 50px;
+  }
+  iframe {
+      width: 100%;
+      height: 300px;
+  }
+  video{
+    display: none;
+  }
+  .part_one_left video, .part_one_right h1, .part_one_right p {
+      margin-left: 0;
+      text-align: center;
+  }
+  ion-icon{
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Phones */
+  nav {
+      flex-direction: column;
+      padding: 10px;
+      height: auto;
+  }
+  ion-icon{
+    display: none;
+  }
+  nav img {
+      width: 80px;
+      height: auto;
+      margin: 0 auto;
+  }
+  video{
+    display: none;
+  }
+  ul {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+  }
+  li {
+      margin: 10px 0;
+  }
+  ion-icon {
+      margin-left: 0;
+  }
+  .part_one_left video {
+      width: 90%;
+      margin: 20px 0;
+  }
+  .contact, .card {
+      width: 90%;
+      margin: 10px auto;
+  }
+  iframe {
+      width: 100%;
+      height: 250px;
   }
 }
